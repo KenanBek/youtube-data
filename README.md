@@ -114,6 +114,7 @@ Output:
             Videos: 123
             Views: 16994139768
             Comments: 471563
+    ...
 
 #### Show most recent videos of given channels
 
