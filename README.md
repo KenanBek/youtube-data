@@ -16,7 +16,7 @@ To see all demo commands use
 
     python main.py demo -h
 
-All communication goes through (python-youtube-apiv3)[https://github.com/KenanBek/python-youtube-apiv3].
+All communication goes through [python-youtube-apiv3](https://github.com/KenanBek/python-youtube-apiv3).
 It is basic wrapper around Google's API. Here we use it just by creating new instance of the API with API key.
 
     api = YouTubeAPI('API-KEY')
