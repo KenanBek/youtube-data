@@ -63,7 +63,7 @@ Code:
         for category in categories['items']:
             print(category['snippet']['title'])
 
-Result:
+Output:
 
         Categories for Germany
     Film & Animation
@@ -100,6 +100,20 @@ Code:
         print("\tViews: {}".format(channel_info['items'][0]['statistics']['viewCount']))
         print("\tComments: {}".format(channel_info['items'][0]['statistics']['commentCount']))
         print('')
+
+Output:
+
+    Title: Selena Gomez
+    Desc: Official Selena Gomez YouTube Channel!
+            Videos: 169
+            Views: 346824466
+            Comments: 1632729
+
+    Title: JustinBieberVEVO
+    Desc: Justin Bieber on Vevo - Official Music Videos, Live Performances, Interviews and more...
+            Videos: 123
+            Views: 16994139768
+            Comments: 471563
 
 #### Show most recent videos of given channels
 
@@ -138,6 +152,28 @@ Code:
             print(video_desc)
         print('')
 
+Output:
+
+    ...
+    Title: PUMA
+    Views: 178299677
+    Videos:
+    PUMA x NATUREL | Fresh and Futuristic
+    Graphic artist Naturel's designs go far beyond the expected. His approach: a fusion of symbolism-heavy illustrations and inspiration from ne
+    o-cubism, sport, fashion, and music. In his second...
+    Tsugi Jun featuring The Weeknd
+    Meet the next generation of Tsugi. The Tsugi Jun arrives with a sleek new profile and bold branding. It's for the makers of this world - tho
+    se who can't help but envision, create, and hustle....
+    Tsugi Netfit featuring The Weeknd
+    The Tsugi NETFIT v2 is ready for whatever's next and whatever comes its way. Its progressive design is enhanced with NETFIT, a unique lacing
+     system for customizable fit and style. Lace up....
+    PUMA SOUTH AFRICA | #RunTheStreets X Anatii
+    No such thing as losing. Only hustle. #ANATII Music by: Theevs Music - Last Night (Fight Night). OG Voice: Anatii Directed by: Abi Green.
+    PUMA x SHANTELL MARTIN | Streetwear Redrawn
+    Shantell Martin has created a language of lines. Part whimsical, part autobiographical, her inky world of characters and messages bridges th
+    e gap between fine art, performance art, and everyday...
+    ...
+
 #### Show most popular videos in the Germany
 
     python main.py demo -tv
@@ -153,6 +189,14 @@ Code:
     for popular_video in popular_videos['items']:
         video_title = enc(popular_video['snippet']['title'])
         print(video_title)
+
+Output:
+
+    Das neue Galaxy S9 | S9+
+    Be┼ƒikta┼ƒ 3-1 Fenerbah├ºe Ma├º ├ûzeti 25 ┼₧ubat 2018
+    Ich habe MiiMii getroffen | Leon Mach├¿re
+    Huggle - die kuschelige Funktionskleidung - Das Ding des Jahres
+    YOU LAUGH, YOU DIE
 
 #### Search for given term and order results by rating in the Germany
 
@@ -170,3 +214,11 @@ Code:
     for popular_video in popular_videos['items']:
         video_title = enc(popular_video['snippet']['title'])
         print(video_title)
+
+Output:
+
+    Python for beginners - #2. Operators and Variables
+    Learn Python Programming Tutorial Online Training by Durga Sir On 05-02-2018
+    Learn Python Programming Tutorial Online Training by Durga Sir On 15-02-2018
+    5th Grader Python Coding
+    Extraire Des Sous Chaines  De Caracteres En Langage Python
