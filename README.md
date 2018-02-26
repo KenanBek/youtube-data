@@ -21,7 +21,7 @@ It is basic wrapper around Google's API. Here we use it just by creating new ins
 
     api = YouTubeAPI('API-KEY')
 
-Example of search function:
+Example wrapper over search function of API:
 
     def search_list(self, **kwargs):
         """
@@ -62,6 +62,16 @@ Code:
         print("\n\tCategories for {}".format(country.name))
         for category in categories['items']:
             print(category['snippet']['title'])
+
+Result:
+
+        Categories for Germany
+    Film & Animation
+    Autos & Vehicles
+    Music
+    Pets & Animals
+    Sports
+    ...
 
 #### Show basic info and stats for given channels
 
