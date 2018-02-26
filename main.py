@@ -132,7 +132,7 @@ def demo_search(api, query):
 
 
 def demo(command):
-    api = YouTubeAPI('AIzaSyBGvRcUjTaMQi9ry585d09nWdbed7rRdBs')
+    api = YouTubeAPI('api-key')  # see https://developers.google.com/api-client-library/python/guide/aaa_apikeys
     if command.categories:
         demo_categories(api)
     if command.channels:

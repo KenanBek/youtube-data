@@ -21,6 +21,8 @@ It is basic wrapper around Google's API. Here we use it just by creating new ins
 
     api = YouTubeAPI('API-KEY')
 
+See https://developers.google.com/api-client-library/python/guide/aaa_apikeys to get your API key.
+
 Example of search function:
 
     def search_list(self, **kwargs):
