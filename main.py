@@ -145,7 +145,7 @@ def demo(command):
         demo_search(api, command.query)
 
 
-if __name__ == '__main__':
+def get_parser():
     argument_parser = argparse.ArgumentParser()
     argument_subparsers = argument_parser.add_subparsers(help="use following sub-commands")
 
@@ -186,5 +186,9 @@ if __name__ == '__main__':
     )
     command_demo.set_defaults(func=demo)
 
-    args = argument_parser.parse_args()
+    return argument_parser.parse_args()
+
+
+if __name__ == '__main__':
+    args = get_parser()
     args.func(args)
