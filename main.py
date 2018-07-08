@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-from __future__ import unicode_literals
 
 import argparse
 import iso3166
@@ -14,8 +13,8 @@ def enc(text):
     :return: 
     """
     if isinstance(text, str):
-        return unicode(text, 'utf-8')  # TODO: fix in Python 3
-    elif isinstance(text, unicode):
+        return str(text)
+    if isinstance(text, unicode):
         return text.encode('utf-8')
     else:
         raise Exception("Unsupported encode format.")
@@ -69,8 +68,7 @@ def demo_channels(api):
         print("Desc: {}".format(channel_desc))
         print("\tVideos: {}".format(channel_info['items'][0]['statistics']['videoCount']))
         print("\tViews: {}".format(channel_info['items'][0]['statistics']['viewCount']))
-        print("\tComments: {}".format(channel_info['items'][0]['statistics']['commentCount']))
-        print('')
+        print("\tComments: {}".format(channel_info['items'][0]['statistics']['commentCount']), end="\n\n")
 
 
 def demo_channel_videos(api):
