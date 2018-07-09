@@ -229,4 +229,5 @@ Output:
 
 ### Python 3 updates and little touches
 1. Friendly fork of paraent repositry compatible with Python 3.6.
-2. Some small touches
+2. Added country auto detection 
+3. Some small touches
