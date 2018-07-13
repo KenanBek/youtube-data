@@ -1,10 +1,9 @@
 # -*- coding: utf-8 -*-
-from __future__ import unicode_literals
 
 import argparse
 import iso3166
 from youtube import YouTubeAPI
-
+from user_country import get_user_country
 
 def enc(text):
     """
@@ -14,7 +13,7 @@ def enc(text):
     :return: 
     """
     if isinstance(text, str):
-        return unicode(text, 'utf-8')  # TODO: fix in Python 3
+        return str(text)
     elif isinstance(text, unicode):
         return text.encode('utf-8')
     else:
@@ -26,7 +25,7 @@ def demo_categories(api):
 
     countries = [
         iso3166.countries.get('us'),
-        iso3166.countries.get('de'),
+        iso3166.countries.get(get_user_country()),#User country of origin
     ]
 
     # We can use simple list instead of iso3166, but with ISO module we have all countries with details
@@ -69,8 +68,7 @@ def demo_channels(api):
         print("Desc: {}".format(channel_desc))
         print("\tVideos: {}".format(channel_info['items'][0]['statistics']['videoCount']))
         print("\tViews: {}".format(channel_info['items'][0]['statistics']['viewCount']))
-        print("\tComments: {}".format(channel_info['items'][0]['statistics']['commentCount']))
-        print('')
+        print("\tComments: {}".format(channel_info['items'][0]['statistics']['commentCount']), end="\n\n")
 
 
 def demo_channel_videos(api):
@@ -110,7 +108,7 @@ def demo_trending_videos(api):
     popular_videos = api.videos_list(
         part='snippet',
         chart='mostPopular',
-        regionCode=iso3166.countries.get('de').alpha2,
+        regionCode=iso3166.countries.get(get_user_country()).alpha2,
     )
 
     for popular_video in popular_videos['items']:
@@ -123,7 +121,7 @@ def demo_search(api, query):
         part='snippet',
         q=query,
         order='rating',
-        regionCode=iso3166.countries.get('de').alpha2,
+        regionCode=iso3166.countries.get(get_user_country()).alpha2,
     )
 
     for popular_video in popular_videos['items']:
@@ -176,13 +174,13 @@ def get_parser():
         '--tr-videos',
         dest="trending_videos",
         action="store_true",
-        help="show trending videos in germany"
+        help="show trending videos in your country"
     )
     command_demo.add_argument(
         '-q',
         '--query',
         dest="query",
-        help="search and order by rating (in DE)"
+        help="search and order by rating (in your country)"
     )
     command_demo.set_defaults(func=demo)
 

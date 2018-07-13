@@ -225,3 +225,9 @@ Output:
     Learn Python Programming Tutorial Online Training by Durga Sir On 15-02-2018
     5th Grader Python Coding
     Extraire Des Sous Chaines  De Caracteres En Langage Python
+
+
+### Python 3 updates and little touches
+1. Friendly fork of paraent repositry compatible with Python 3.6.
+2. Added country auto detection 
+3. Some small touches
